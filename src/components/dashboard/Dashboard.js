@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Col, Statistic, Progress, Tag } from 'antd';
+import { Card, Row, Col, Statistic, Progress } from 'antd';
 // import {
 //     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,ResponsiveContainer, RadialBarChart, RadialBar
 // } from 'recharts';

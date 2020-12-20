@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from 'react';
 import { Modal } from 'antd';
 import { Player, BigPlayButton } from 'video-react';
@@ -29,7 +30,7 @@ class ViewEvidence extends Component {
 							</Player>
 						)}
 					{evidenceType === 'image' && (
-						<img style={{ width: '100%' }} src='law.jpg' />
+						<img alt='image' style={{ width: '100%' }} src='law.jpg' />
 					)}
 				</Modal>
 			</div>

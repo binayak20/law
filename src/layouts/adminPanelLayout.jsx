@@ -91,7 +91,7 @@ export default class AdminPanelLayout extends React.Component {
 		this.setState({ collapsedNot: false });
 	};
 	render() {
-		const { view, thumbWidth, collapsedNot, windowSize } = this.state;
+		const { view, thumbWidth, collapsedNot } = this.state;
 		//console.log(windowSize)
 		let sideShow = '';
 		let mask = false;
