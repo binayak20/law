@@ -43,16 +43,18 @@ class BookList extends Component {
 							// footer={<div>Footer</div>}
 							bordered={false}
 							dataSource={category}
-							renderItem={(item, index) => (
-								<List.Item>
-									<Typography.Text mark={index === markId}>
-										{index + 1}.{' '}
-									</Typography.Text>
-									<a href='#' onClick={() => this.clickCategory(index)}>
-										{item}
-									</a>
-								</List.Item>
-							)}
+							renderItem={(item, index) => {
+								return (
+									<List.Item>
+										<Typography.Text mark={index === markId}>
+											{index + 1}.{' '}
+										</Typography.Text>
+										<a href='#' onClick={() => this.clickCategory(index)}>
+											{item}
+										</a>
+									</List.Item>
+								);
+							}}
 						/>
 					</Col>
 					<Col span={18}>
