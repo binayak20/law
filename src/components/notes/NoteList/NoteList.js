@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import {
 	Card,
@@ -10,15 +11,15 @@ import {
 	message,
 } from 'antd';
 import NoteModal from '../NewNote/NoteModal';
-function confirm(e) {
-	console.log(e);
-	message.success('Delete Successfully');
-}
+// function confirm(e) {
+// 	console.log(e);
+// 	message.success('Delete Successfully');
+// }
 
-function cancel(e) {
-	console.log(e);
-	message.error('Click on No');
-}
+// function cancel(e) {
+// 	console.log(e);
+// 	message.error('Click on No');
+// }
 
 const data = [
 	{
@@ -60,6 +61,15 @@ class NoteList extends Component {
 			visible: true,
 		});
 	}
+	confirm = (e) => {
+		console.log(e);
+		message.success('Delete Successfully');
+	};
+
+	cancel = (e) => {
+		console.log(e);
+		message.error('Click on No');
+	};
 	render() {
 		const { visible, noteData } = this.state;
 		const columns = [
@@ -106,8 +116,8 @@ class NoteList extends Component {
 
 						<Popconfirm
 							title='Are you sure delete this task?'
-							onConfirm={confirm}
-							onCancel={cancel}
+							onConfirm={this.confirm}
+							onCancel={this.cancel}
 							okText='Yes'
 							cancelText='No'
 						>

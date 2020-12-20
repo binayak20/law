@@ -3,7 +3,7 @@ import {
 	Card,
 	Table,
 	Divider,
-	Tag,
+	//	Tag,
 	Affix,
 	Button,
 	Icon,
@@ -11,15 +11,6 @@ import {
 	message,
 } from 'antd';
 import NewClient from './NewClient';
-function confirm(e) {
-	console.log(e);
-	message.success('Delete Successfully');
-}
-
-function cancel(e) {
-	console.log(e);
-	message.error('Click on No');
-}
 
 const data = [
 	{
@@ -143,6 +134,15 @@ class Client extends Component {
 			visible: true,
 		});
 	}
+	confirm = (e) => {
+		console.log(e);
+		message.success('Delete Successfully');
+	};
+
+	cancel = (e) => {
+		console.log(e);
+		message.error('Click on No');
+	};
 	render() {
 		const { visible, clientData } = this.state;
 		const columns = [
@@ -184,8 +184,8 @@ class Client extends Component {
 
 						<Popconfirm
 							title='Are you sure delete this task?'
-							onConfirm={confirm}
-							onCancel={cancel}
+							onConfirm={this.confirm}
+							onCancel={this.cancel}
 							okText='Yes'
 							cancelText='No'
 						>

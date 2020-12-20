@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Avatar, Drawer, Card, Button } from 'antd';
+import { Drawer, Card, Button } from 'antd';
 import moment from 'moment';
 import { Meteor } from 'meteor/meteor';
 

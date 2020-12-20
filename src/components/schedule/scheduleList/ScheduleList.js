@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import {
 	Card,
 	Table,
 	Divider,
-	Tag,
+	//	Tag,
 	Affix,
 	Button,
 	Icon,
@@ -12,15 +13,15 @@ import {
 } from 'antd';
 import ScheduleModal from '../ScheduleModal/ScheduleModal';
 //import NewClient from "./NewClient";
-function confirm(e) {
-	console.log(e);
-	message.success('Delete Successfully');
-}
+// function confirm(e) {
+// 	console.log(e);
+// 	message.success('Delete Successfully');
+// }
 
-function cancel(e) {
-	console.log(e);
-	message.error('Click on No');
-}
+// function cancel(e) {
+// 	console.log(e);
+// 	message.error('Click on No');
+// }
 
 const data = [
 	{
@@ -67,6 +68,15 @@ class ScheduleList extends Component {
 			visible: true,
 		});
 	}
+	confirm = (e) => {
+		console.log(e);
+		message.success('Delete Successfully');
+	};
+
+	cancel = (e) => {
+		console.log(e);
+		message.error('Click on No');
+	};
 	render() {
 		const { visible, scheduleData } = this.state;
 		const columns = [
@@ -113,8 +123,8 @@ class ScheduleList extends Component {
 
 						<Popconfirm
 							title='Are you sure delete this task?'
-							onConfirm={confirm}
-							onCancel={cancel}
+							onConfirm={this.confirm}
+							onCancel={this.cancel}
 							okText='Yes'
 							cancelText='No'
 						>

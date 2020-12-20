@@ -13,15 +13,15 @@ import {
 import ViewEvidence from './ViewEvidence';
 import EvidenceModal from '../NewEvidence/EvidenceModal';
 //import NoteModal from "../NewNote/NoteModal";
-function confirm(e) {
-	console.log(e);
-	message.success('Delete Successfully');
-}
+// function confirm(e) {
+// 	console.log(e);
+// 	message.success('Delete Successfully');
+// }
 
-function cancel(e) {
-	console.log(e);
-	message.error('Click on No');
-}
+// function cancel(e) {
+// 	console.log(e);
+// 	message.error('Click on No');
+// }
 
 const data = [
 	{
@@ -92,6 +92,15 @@ class EvidenceList extends Component {
 			evidenceType: record.type,
 		});
 	}
+	confirm = (e) => {
+		console.log(e);
+		message.success('Delete Successfully');
+	};
+
+	cancel = (e) => {
+		console.log(e);
+		message.error('Click on No');
+	};
 	render() {
 		const {
 			visible,
@@ -174,8 +183,8 @@ class EvidenceList extends Component {
 
 						<Popconfirm
 							title='Are you sure delete this task?'
-							onConfirm={confirm}
-							onCancel={cancel}
+							onConfirm={this.confirm}
+							onCancel={this.cancel}
 							okText='Yes'
 							cancelText='No'
 						>

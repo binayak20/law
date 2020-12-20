@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import {
 	Card,
@@ -13,15 +14,6 @@ import {
 import NewCaseModal from '../NewCase/NewCaseModal';
 //import ScheduleModal from "../ScheduleModal/ScheduleModal";
 //import NewClient from "./NewClient";
-function confirm(e) {
-	console.log(e);
-	message.success('Delete Successfully');
-}
-
-function cancel(e) {
-	console.log(e);
-	message.error('Click on No');
-}
 
 const data = [
 	{
@@ -66,6 +58,15 @@ class CaseList extends Component {
 			visible: true,
 		});
 	}
+	confirm = (e) => {
+		console.log(e);
+		message.success('Delete Successfully');
+	};
+
+	cancel = (e) => {
+		console.log(e);
+		message.error('Click on No');
+	};
 	render() {
 		const { visible, caseDetails } = this.state;
 		const columns = [
@@ -122,8 +123,8 @@ class CaseList extends Component {
 
 						<Popconfirm
 							title='Are you sure delete this task?'
-							onConfirm={confirm}
-							onCancel={cancel}
+							onConfirm={this.confirm}
+							onCancel={this.cancel}
 							okText='Yes'
 							cancelText='No'
 						>

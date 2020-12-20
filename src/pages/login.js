@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
-import { FlowRouter } from 'meteor/kadira:flow-router';
+//import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Button, Row, Col, Form, Input } from 'antd';
 import './style.css';
 export default class Login extends React.Component {
@@ -13,18 +14,18 @@ export default class Login extends React.Component {
 	handleSubmit = () => {
 		const { username, password } = this.state;
 		console.log(username, password);
-		Meteor.loginWithPassword(
-			{ username: username },
-			password,
-			(error, success) => {
-				if (error) {
-					console.log('error', error);
-					alert(error.message);
-				} else {
-					FlowRouter.go('/dashboard');
-				}
-			}
-		);
+		// Meteor.loginWithPassword(
+		// 	{ username: username },
+		// 	password,
+		// 	(error, success) => {
+		// 		if (error) {
+		// 			console.log('error', error);
+		// 			alert(error.message);
+		// 		} else {
+		// 			FlowRouter.go('/dashboard');
+		// 		}
+		// 	}
+		// );
 	};
 
 	render() {
