@@ -47,7 +47,9 @@ class BookList extends Component {
 									<Typography.Text mark={index === markId}>
 										{index + 1}.{' '}
 									</Typography.Text>
-									<a onClick={() => this.clickCategory(index)}> {item}</a>
+									<a href='#' onClick={() => this.clickCategory(index)}>
+										{item}
+									</a>
 								</List.Item>
 							)}
 						/>
