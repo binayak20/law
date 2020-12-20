@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Row, Col, Card, List, Typography } from 'antd';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ class BookList extends Component {
 	getCategory() {
 		const listItems = category.map((cat) => (
 			<li key={cat}>
-				<a>{cat}</a>
+				<a href='#'>{cat}</a>
 			</li>
 		));
 		return listItems;
